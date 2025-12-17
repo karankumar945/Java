@@ -5,8 +5,8 @@ import java.util.Collections;
 public class array_list{
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
-        ArrayList<String> list1 = new ArrayList<>();
-        ArrayList<Character> list2 = new ArrayList<>();
+        // ArrayList<String> list1 = new ArrayList<>();
+        // ArrayList<Character> list2 = new ArrayList<>();
 
         // add
         list.add(4);
