@@ -140,3 +140,30 @@
 //         System.out.println("The price is = " + b1.getprice());
 //     }
 // }
+
+class Bank{
+    private int balance;
+
+    public void getbalance(int balance){
+        this.balance = balance;
+    }
+    public int setbalance(){
+        return balance;
+    }
+    public void display(){
+        System.out.println(setbalance());
+    }
+    
+}
+public class oops{
+    public static void main(String[] args) {
+        Bank b1 = new Bank();
+        b1.getbalance(89000);
+        b1.setbalance();
+        b1.display();
+        Bank b2 = new Bank();
+        b2.getbalance(90000);
+        b2.setbalance();
+        b2.display();
+    }
+}

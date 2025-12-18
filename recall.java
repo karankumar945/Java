@@ -2,7 +2,6 @@
 import java.util.Scanner;
 
 
-// import java.util.Scanner;
 
 // // Ek method banao jo array ka maximum element return kare.
 
@@ -65,27 +64,50 @@ import java.util.Scanner;
 //     }
 // }
 
-// Array me second largest element find karo.
+// // Array me second largest element find karo.
+// public class recall{
+//     public static int secondmax(int arr[]){
+//         int max = arr[0];
+//         // int secmax = arr[0];
+//         for(int i = 0 ; i<arr.length-1; i++){
+//             if(max <= arr[i+1]){
+//                 max = arr[i+1];
+//             }
+//         }
+//         return max;
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.println("Enter the l of array");
+//         int n = sc.nextInt();
+//         int arr[] = new int[n];
+//         for(int i=0;i<arr.length;i++){
+//             arr[i] = sc.nextInt();
+//         }
+//         int max = secondmax(arr);
+//         System.out.println(max);
+//     }
+// }
+
+// Array me majority element find karo (> n/2 times).
+
 public class recall{
-    public static int secondmax(int arr[]){
-        int max = arr[0];
-        // int secmax = arr[0];
-        for(int i = 0 ; i<arr.length-1; i++){
-            if(max <= arr[i+1]){
-                max = arr[i+1];
+    public static int majority(int arr[],int n){
+        for(int i = 0;i < arr.length;i++){
+            if(arr[i] > n/2){
+                System.out.println(arr[i]);
             }
         }
-        return max;
+        return 0;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the l of array");
-        int n = sc.nextInt();
+        int n = 5;
         int arr[] = new int[n];
-        for(int i=0;i<arr.length;i++){
+        
+        for(int i= 0;i<n;i++){
             arr[i] = sc.nextInt();
         }
-        int max = secondmax(arr);
-        System.out.println(max);
+        majority(arr, n);
     }
 }
