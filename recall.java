@@ -1,12 +1,5 @@
 
-import java.util.Scanner;
-
-
-
-// // Ek method banao jo array ka maximum element return kare.
-
-// public class recall{
-    
+    import java.util.*;
 //     public static int maxarray(int arr[]){
 //         int arrmax = arr[0];
 //         for(int i = 0;i < arr.length; i++){
@@ -64,17 +57,71 @@ import java.util.Scanner;
 //     }
 // }
 
-// // Array me second largest element find karo.
+// Array me second largest element find karo.
+public class recall{
+    public static int secondmax(int arr[]){
+        int max = arr[0];
+        // int secmax = arr[0];
+        for(int i = 0 ; i<arr.length-1; i++){
+            if(max <= arr[i+1]){
+                max = arr[i+1];
+            }
+        }
+        return max;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the l of array");
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<arr.length;i++){
+            arr[i] = sc.nextInt();
+        }
+        int max = secondmax(arr);
+        System.out.println(max);
+    }
+}
+
+// // Array me majority element find karo (> n/2 times).
+
 // public class recall{
-//     public static int secondmax(int arr[]){
-//         int max = arr[0];
-//         // int secmax = arr[0];
-//         for(int i = 0 ; i<arr.length-1; i++){
-//             if(max <= arr[i+1]){
-//                 max = arr[i+1];
+//     public static int majority(int arr[],int n){
+//         for(int i = 0;i < arr.length;i++){
+//             if(arr[i] > n/2){
+//                 System.out.println(arr[i]);
 //             }
 //         }
-//         return max;
+//         return 0;
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int n = 5;
+//         int arr[] = new int[n];
+        
+//         for(int i= 0;i<n;i++){
+//             arr[i] = sc.nextInt();
+//         }
+//         majority(arr, n);
+//     }
+// }
+
+// Array ko reverse karo (without extra array).
+
+// public class recall{
+//     public static void reverse(int arr[],int n){
+//         int i = 0;
+//         int j = n-1;
+//         while(i<j){
+//             int temp = arr[i];
+//             arr[i] = arr[j];
+//             arr[j] = temp;
+//             i++;
+//             j--;
+//         }
+
+//         for(int k=0;k<n;k++){
+//             System.out.println(arr[k]);
+//         }
 //     }
 //     public static void main(String[] args) {
 //         Scanner sc = new Scanner(System.in);
@@ -84,30 +131,29 @@ import java.util.Scanner;
 //         for(int i=0;i<arr.length;i++){
 //             arr[i] = sc.nextInt();
 //         }
-//         int max = secondmax(arr);
-//         System.out.println(max);
+//         reverse(arr, n);
 //     }
 // }
 
-// Array me majority element find karo (> n/2 times).
+// Array ka sum find karo.
 
-public class recall{
-    public static int majority(int arr[],int n){
-        for(int i = 0;i < arr.length;i++){
-            if(arr[i] > n/2){
-                System.out.println(arr[i]);
-            }
-        }
-        return 0;
-    }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = 5;
-        int arr[] = new int[n];
-        
-        for(int i= 0;i<n;i++){
-            arr[i] = sc.nextInt();
-        }
-        majority(arr, n);
-    }
-}
+// public class recall{
+//     public static int sum(int arr[]){
+//         int add = 0;
+//         for(int i=0;i<arr.length;i++){
+//             add += arr[i];
+//         }
+//         return add;
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.println("Enter the l of array");
+//         int n = sc.nextInt();
+//         int arr[] = new int[n];
+//         for(int i=0;i<arr.length;i++){
+//             arr[i] = sc.nextInt();
+//         }
+//         int res = sum(arr);
+//         System.out.println(res);
+//     }
+// }
