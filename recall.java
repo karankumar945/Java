@@ -57,30 +57,30 @@
 //     }
 // }
 
-// Array me second largest element find karo.
-public class recall{
-    public static int secondmax(int arr[]){
-        int max = arr[0];
-        // int secmax = arr[0];
-        for(int i = 0 ; i<arr.length-1; i++){
-            if(max <= arr[i+1]){
-                max = arr[i+1];
-            }
-        }
-        return max;
-    }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the l of array");
-        int n = sc.nextInt();
-        int arr[] = new int[n];
-        for(int i=0;i<arr.length;i++){
-            arr[i] = sc.nextInt();
-        }
-        int max = secondmax(arr);
-        System.out.println(max);
-    }
-}
+// // Array me second largest element find karo.
+// public class recall{
+//     public static int secondmax(int arr[]){
+//         int max = arr[0];
+//         // int secmax = arr[0];
+//         for(int i = 0 ; i<arr.length-1; i++){
+//             if(max <= arr[i+1]){
+//                 max = arr[i+1];
+//             }
+//         }
+//         return max;
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.println("Enter the l of array");
+//         int n = sc.nextInt();
+//         int arr[] = new int[n];
+//         for(int i=0;i<arr.length;i++){
+//             arr[i] = sc.nextInt();
+//         }
+//         int max = secondmax(arr);
+//         System.out.println(max);
+//     }
+// }
 
 // // Array me majority element find karo (> n/2 times).
 
@@ -157,3 +157,46 @@ public class recall{
 //         System.out.println(res);
 //     }
 // }
+
+public class recall{
+    public static void main(String[] ars){
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t>0){
+            int add = 0;
+            int red = 0;
+            int tc;
+            int n = sc.nextInt();
+            int prices[] = new int[n];
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            for(int i = 0;i<n;i++){
+                prices[i] = sc.nextInt();
+            }
+            // add
+            for(int i = 0;i<n;i++){
+                add += prices[i];
+            }
+            // reducing value
+            for(int i =0;i<n;i++){
+                if(prices[i] <= y){
+                    prices[i] = 0;
+                }
+                else{
+                    prices[i] = prices[i] - y;
+                }
+            }
+            for(int i = 0;i <n;i++){
+                red += prices[i];
+            }
+            tc = red + x;
+            if(tc < add){
+                System.out.println("COUPON");
+            }
+            else{
+                System.out.println("NO COUPON");
+            }
+            t--;
+        }  
+    }
+}
