@@ -1,6 +1,7 @@
 
-    import java.util.*;
-//     public static int maxarray(int arr[]){
+import java.util.*;
+
+
 //         int arrmax = arr[0];
 //         for(int i = 0;i < arr.length; i++){
 //             if(arrmax <= arr[i]){
@@ -158,45 +159,66 @@
 //     }
 // }
 
+// public class recall{
+//     public static void main(String[] ars){
+//         Scanner sc = new Scanner(System.in);
+//         int t = sc.nextInt();
+//         while(t>0){
+//             int add = 0;
+//             int red = 0;
+//             int tc;
+//             int n = sc.nextInt();
+//             int prices[] = new int[n];
+//             int x = sc.nextInt();
+//             int y = sc.nextInt();
+//             for(int i = 0;i<n;i++){
+//                 prices[i] = sc.nextInt();
+//             }
+//             // add
+//             for(int i = 0;i<n;i++){
+//                 add += prices[i];
+//             }
+//             // reducing value
+//             for(int i =0;i<n;i++){
+//                 if(prices[i] <= y){
+//                     prices[i] = 0;
+//                 }
+//                 else{
+//                     prices[i] = prices[i] - y;
+//                 }
+//             }
+//             for(int i = 0;i <n;i++){
+//                 red += prices[i];
+//             }
+//             tc = red + x;
+//             if(tc < add){
+//                 System.out.println("COUPON");
+//             }
+//             else{
+//                 System.out.println("NO COUPON");
+//             }
+//             t--;
+//         }  
+//     }
+// }
+
 public class recall{
-    public static void main(String[] ars){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        while(t>0){
-            int add = 0;
-            int red = 0;
-            int tc;
-            int n = sc.nextInt();
-            int prices[] = new int[n];
-            int x = sc.nextInt();
-            int y = sc.nextInt();
-            for(int i = 0;i<n;i++){
-                prices[i] = sc.nextInt();
+        int n = sc.nextInt();
+        int heightarr[] = new int[n];
+        for(int i = 0 ; i<n ;i++){
+            heightarr[i] = sc.nextInt();
+        }
+        int maxarea = 0;
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<n;j++){
+                int width = j - i;
+                int height = Math.min(heightarr[j],heightarr[i]);
+                int area = height * width;
+                maxarea = Math.max(maxarea, area);
             }
-            // add
-            for(int i = 0;i<n;i++){
-                add += prices[i];
-            }
-            // reducing value
-            for(int i =0;i<n;i++){
-                if(prices[i] <= y){
-                    prices[i] = 0;
-                }
-                else{
-                    prices[i] = prices[i] - y;
-                }
-            }
-            for(int i = 0;i <n;i++){
-                red += prices[i];
-            }
-            tc = red + x;
-            if(tc < add){
-                System.out.println("COUPON");
-            }
-            else{
-                System.out.println("NO COUPON");
-            }
-            t--;
-        }  
+        }
+        System.out.println(maxarea);
     }
 }
