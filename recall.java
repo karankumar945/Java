@@ -254,36 +254,3 @@
 //     }
 // }
 
-// rotating array by indexing
-public class recall{
-    public static void revarr(int arr[],int target,int valuefind){
-        int n = arr.length;
-        target = target % n;
-        int temp[] = new int[n];
-        int count = 0;
-        int indexing = -1;
-        for(int i=target;i<n;i++){
-            temp[count++] = arr[i];
-        }
-        for(int i = 0;i<target;i++){
-            temp[count++] = arr[i];
-        }
-        for(int i = 0;i<n;i++){
-            arr[i] = temp[i];
-        }
-        for(int i = 0;i<n;i++){
-            if(arr[i] == valuefind){
-                indexing = i;
-                break;
-            }
-        }
-        System.out.println(indexing);
-    }
-    public static void main(String[] args) {
-        // Scanner sc = new Scanner(System.in);
-        int arr[] = {0,1,2,4,5,6,7};
-        int target = 3;
-        int indexing = 0;
-        revarr(arr, target,indexing);
-    }
-}
