@@ -1,9 +1,3 @@
-
-import java.util.Scanner;
-
-//         for(int i = 0;i < arr.length; i++){
-//             if(arrmax <= arr[i]){
-//                 arrmax = arr[i];
 //             }
 //         }
 //         return arrmax;
@@ -204,19 +198,92 @@ import java.util.Scanner;
 //         System.out.println(maxarea);
 //     }
 // }
-public class recall {
+// public class recall {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int arr[] = {0,1,2,2,3,0,4,2};
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int arr[] = {0,1,2,2,3,0,4,2};
+//         int count = 0;
+//         int val = sc.nextInt();
+//         for (int i = 0; i < arr.length; i++) {
+//             if (arr[i] != val) {
+//                 arr[count] = arr[i];
+//                 count++;
+//             }
+//         }
+//         System.out.println(count);
+//     }
+// }
+
+
+// class Solution {
+//     public void nextPermutation(int[] nums) {
+//         int n = nums.length;
+//         int i = n - 2;
+
+//         // Step 1: find breakpoint
+//         while (i >= 0 && nums[i] >= nums[i + 1]) {
+//             i--;
+//         }
+
+//         // Step 2: if breakpoint exists
+//         if (i >= 0) {
+//             int j = n - 1;
+//             while (nums[j] <= nums[i]) {
+//                 j--;
+//             }
+//             swap(nums, i, j);
+//         }
+
+//         // Step 3: reverse suffix
+//         reverse(nums, i + 1, n - 1);
+//     }
+
+//     void swap(int[] nums, int i, int j) {
+//         int temp = nums[i];
+//         nums[i] = nums[j];
+//         nums[j] = temp;
+//     }
+
+//     void reverse(int[] nums, int start, int end) {
+//         while (start < end) {
+//             swap(nums, start, end);
+//             start++;
+//             end--;
+//         }
+//     }
+// }
+
+// rotating array by indexing
+public class recall{
+    public static void revarr(int arr[],int target,int valuefind){
+        int n = arr.length;
+        target = target % n;
+        int temp[] = new int[n];
         int count = 0;
-        int val = sc.nextInt();
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != val) {
-                arr[count] = arr[i];
-                count++;
+        int indexing = -1;
+        for(int i=target;i<n;i++){
+            temp[count++] = arr[i];
+        }
+        for(int i = 0;i<target;i++){
+            temp[count++] = arr[i];
+        }
+        for(int i = 0;i<n;i++){
+            arr[i] = temp[i];
+        }
+        for(int i = 0;i<n;i++){
+            if(arr[i] == valuefind){
+                indexing = i;
+                break;
             }
         }
-        System.out.println(count);
+        System.out.println(indexing);
+    }
+    public static void main(String[] args) {
+        // Scanner sc = new Scanner(System.in);
+        int arr[] = {0,1,2,4,5,6,7};
+        int target = 3;
+        int indexing = 0;
+        revarr(arr, target,indexing);
     }
 }
