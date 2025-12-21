@@ -1,8 +1,6 @@
 
-import java.util.*;
+import java.util.Scanner;
 
-
-//         int arrmax = arr[0];
 //         for(int i = 0;i < arr.length; i++){
 //             if(arrmax <= arr[i]){
 //                 arrmax = arr[i];
@@ -22,11 +20,8 @@ import java.util.*;
 //         System.out.println(res);
 //     }
 // }
-
 // // Ek method likho jo string ko reverse kare aur return kare.
-
 // public class recall{
-    
 //     public static String revstr(String str){
 //         String revstr = "";
 //         for(int i =str.length()-1;i>=0;i--){
@@ -39,9 +34,7 @@ import java.util.*;
 //         System.out.println(revstr);
 //     }
 // }
-
 // Ek method likho jo count kare vowels in a string.
-
 // public class recall{
 //     public static int vowels(String str,int count){
 //         for(int i = 0;i<=str.length()-1;i++){
@@ -57,7 +50,6 @@ import java.util.*;
 //         System.out.println(coun);
 //     }
 // }
-
 // // Array me second largest element find karo.
 // public class recall{
 //     public static int secondmax(int arr[]){
@@ -82,9 +74,7 @@ import java.util.*;
 //         System.out.println(max);
 //     }
 // }
-
 // // Array me majority element find karo (> n/2 times).
-
 // public class recall{
 //     public static int majority(int arr[],int n){
 //         for(int i = 0;i < arr.length;i++){
@@ -98,16 +88,13 @@ import java.util.*;
 //         Scanner sc = new Scanner(System.in);
 //         int n = 5;
 //         int arr[] = new int[n];
-        
 //         for(int i= 0;i<n;i++){
 //             arr[i] = sc.nextInt();
 //         }
 //         majority(arr, n);
 //     }
 // }
-
 // Array ko reverse karo (without extra array).
-
 // public class recall{
 //     public static void reverse(int arr[],int n){
 //         int i = 0;
@@ -119,7 +106,6 @@ import java.util.*;
 //             i++;
 //             j--;
 //         }
-
 //         for(int k=0;k<n;k++){
 //             System.out.println(arr[k]);
 //         }
@@ -135,9 +121,7 @@ import java.util.*;
 //         reverse(arr, n);
 //     }
 // }
-
 // Array ka sum find karo.
-
 // public class recall{
 //     public static int sum(int arr[]){
 //         int add = 0;
@@ -158,7 +142,6 @@ import java.util.*;
 //         System.out.println(res);
 //     }
 // }
-
 // public class recall{
 //     public static void main(String[] ars){
 //         Scanner sc = new Scanner(System.in);
@@ -201,24 +184,39 @@ import java.util.*;
 //         }  
 //     }
 // }
+// public class recall{
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int n = sc.nextInt();
+//         int heightarr[] = new int[n];
+//         for(int i = 0 ; i<n ;i++){
+//             heightarr[i] = sc.nextInt();
+//         }
+//         int maxarea = 0;
+//         for(int i = 0;i<n;i++){
+//             for(int j = 0;j<n;j++){
+//                 int width = j - i;
+//                 int height = Math.min(heightarr[j],heightarr[i]);
+//                 int area = height * width;
+//                 maxarea = Math.max(maxarea, area);
+//             }
+//         }
+//         System.out.println(maxarea);
+//     }
+// }
+public class recall {
 
-public class recall{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int heightarr[] = new int[n];
-        for(int i = 0 ; i<n ;i++){
-            heightarr[i] = sc.nextInt();
-        }
-        int maxarea = 0;
-        for(int i = 0;i<n;i++){
-            for(int j = 0;j<n;j++){
-                int width = j - i;
-                int height = Math.min(heightarr[j],heightarr[i]);
-                int area = height * width;
-                maxarea = Math.max(maxarea, area);
+        int arr[] = {0,1,2,2,3,0,4,2};
+        int count = 0;
+        int val = sc.nextInt();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != val) {
+                arr[count] = arr[i];
+                count++;
             }
         }
-        System.out.println(maxarea);
+        System.out.println(count);
     }
 }
