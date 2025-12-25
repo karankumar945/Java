@@ -255,26 +255,53 @@
 // }
 
 
+// public class recall{
+//     public static int searchInsert(int[] nums, int target) {
+//         int low = 0;
+//         int high = nums.length-1;
+//         // int ans = -1;
+//         while(high>=low){
+//             int mid = low+(high-low)/2;
+//             if(nums[mid] == target){
+//                 return mid;
+//             }
+//             else if(target < nums[mid]){
+//                 high = mid-1;
+//             }
+//             else{
+//                 low = mid +1;
+//             }
+//         }
+//         return low;
+//     }
+//     public static void main(String[] args) {
+//         int num[] = {1,3,5,6};
+//         int ans = searchInsert(num, 2);
+//         System.out.println(ans);
+//     }
+// }
+
 public class recall{
-    public int searchInsert(int[] nums, int target) {
+    public static int findMin(int[] nums) {
         int low = 0;
         int high = nums.length-1;
-        while(high>=low){
-            int mid = high-low/2;
-            if(nums[mid] == target){
-                return mid;
+        int min = nums[0];
+        int mid = low+(high-low)/2;
+        for(int i= low;i<mid;i++){
+            if(min > nums[mid]){
+                min = nums[mid];
             }
-            else if(target < nums[mid]){
-                high = mid-1;
-            }
-            else{
-                low = mid +1;
-            }
-
         }
-        return 0;
+        for(int i=mid+1;i<high;i++){
+            if(min > nums[mid]){
+                min = nums[mid];
+            }
+        }
+        return min;
     }
     public static void main(String[] args) {
-        
+        int nums[]= {4,5,6,7,0,1,2,3};
+        int res = findMin(nums);
+        System.out.println(res);
     }
 }
