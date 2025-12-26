@@ -281,27 +281,58 @@
 //     }
 // }
 
+// public class recall{
+//     public static int findMin(int[] nums) {
+//         int low = 0;
+//         int high = nums.length-1;
+//         int min = nums[0];
+//         int mid = low+(high-low)/2;
+//         for(int i= low;i<mid;i++){
+//             if(min > nums[mid]){
+//                 min = nums[mid];
+//             }
+//         }
+//         for(int i=mid+1;i<high;i++){
+//             if(min > nums[mid]){
+//                 min = nums[mid];
+//             }
+//         }
+//         return min;
+//     }
+//     public static void main(String[] args) {
+//         int nums[]= {4,5,6,7,0,1,2,3};
+//         int res = findMin(nums);
+//         System.out.println(res);
+//     }
+// }
+
 public class recall{
-    public static int findMin(int[] nums) {
-        int low = 0;
-        int high = nums.length-1;
-        int min = nums[0];
-        int mid = low+(high-low)/2;
-        for(int i= low;i<mid;i++){
-            if(min > nums[mid]){
-                min = nums[mid];
+    public static int bestclosingtime(String customers){
+        int n = customers.length();
+        int minpenalty = Integer.MAX_VALUE;
+        int besthour = 0;
+        for(int hour = 0;hour<=n;hour++){
+            int penalty =0;
+            for(int i =0;i<n;i++){
+                if(i<hour){
+                    if(customers.charAt(i) == 'N'){
+                        penalty++;
+                    }
+                }else{
+                    if(customers.charAt(i) == 'Y'){
+                        penalty++;
+                    }
+                }
+            }
+            if(penalty < minpenalty){
+                minpenalty = penalty;
+                besthour = hour;
             }
         }
-        for(int i=mid+1;i<high;i++){
-            if(min > nums[mid]){
-                min = nums[mid];
-            }
-        }
-        return min;
+        return besthour;
     }
     public static void main(String[] args) {
-        int nums[]= {4,5,6,7,0,1,2,3};
-        int res = findMin(nums);
-        System.out.println(res);
+        String customer = "YYNY";
+        System.out.println(bestclosingtime(customer));
     }
 }
