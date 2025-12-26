@@ -306,33 +306,62 @@
 //     }
 // }
 
+// public class recall {
+//     public static int bestClosingTime(String customers) {
+//         int n = customers.length();
+
+//         // Step 1: penalty when shop is closed all day
+//         int penalty = 0;
+//         for (int i = 0; i < n; i++) {
+//             if (customers.charAt(i) == 'Y') {
+//                 penalty++;
+//             }
+//         }
+
+//         int minPenalty = penalty;
+//         int bestHour = 0;
+
+//         // Step 2: open shop hour by hour
+//         for (int i = 0; i < n; i++) {
+//             if (customers.charAt(i) == 'Y') {
+//                 penalty--;      // closed → open, Y no longer penalty
+//             } else {
+//                 penalty++;      // open + N is penalty
+//             }
+
+//             if (penalty < minPenalty) {
+//                 minPenalty = penalty;
+//                 bestHour = i + 1;
+//             }
+//         }
+
+//         return bestHour;
+//     }
+//     public static void main(String[] args) {
+//         String shop = "YYNY";
+//         System.out.println(bestClosingTime(shop));
+//     }
+// }
+
+
+
 public class recall{
-    public static int bestclosingtime(String customers){
-        int n = customers.length();
-        int minpenalty = Integer.MAX_VALUE;
-        int besthour = 0;
-        for(int hour = 0;hour<=n;hour++){
-            int penalty =0;
-            for(int i =0;i<n;i++){
-                if(i<hour){
-                    if(customers.charAt(i) == 'N'){
-                        penalty++;
-                    }
-                }else{
-                    if(customers.charAt(i) == 'Y'){
-                        penalty++;
-                    }
-                }
-            }
-            if(penalty < minpenalty){
-                minpenalty = penalty;
-                besthour = hour;
-            }
+    public static void longestCommonPrefix(String[] strs,char[] prefix) {
+        int count = 0;
+        for(int i=0;i<3;i++){
+            int word = 0;
+            char temp = strs[word].charAt(i);
+            if(temp == strs[word+1].charAt(i) && strs[word+1].charAt(i) == strs[word+2].charAt(i)){
+                prefix[count++] =temp;
         }
-        return besthour;
+        }
+        for(int i=0;i<count;i++){
+            System.out.println(prefix[i]);
+        }
     }
     public static void main(String[] args) {
-        String customer = "YYNY";
-        System.out.println(bestclosingtime(customer));
+        String strs[] = {"flower","flow","flight"};
+        char prefix[] = new char[5];
+        longestCommonPrefix(strs, prefix);
     }
 }
