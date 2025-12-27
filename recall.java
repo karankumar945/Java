@@ -346,26 +346,57 @@
 //         longestCommonPrefix(strs, prefix);
 //     }
 // }
-public class recall {
+// public class recall {
 
-    public static int removeDuplicates(int[] nums) {
-        int count = 1;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[i - 1]) {
-                nums[count] = nums[i];
-                count++;
-            }
-        }
+//     public static int removeDuplicates(int[] nums) {
+//         int count = 1;
+//         for (int i = 1; i < nums.length; i++) {
+//             if (nums[i] != nums[i - 1]) {
+//                 nums[count] = nums[i];
+//                 count++;
+//             }
+//         }
 
-        return count;
-    }
+//         return count;
+//     }
 
-    public static void main(String[] args) {
-        int nums[] = {0, 0, 1, 2, 3, 3};
-        int res = removeDuplicates(nums);
-        System.out.println("count" + res);
-        for (int i = 0; i < res; i++) {
-            System.out.println(nums[i]);
-        }
-    }
-}
+//     public static void main(String[] args) {
+//         int nums[] = {0, 0, 1, 2, 3, 3};
+//         int res = removeDuplicates(nums);
+//         System.out.println("count" + res);
+//         for (int i = 0; i < res; i++) {
+//             System.out.println(nums[i]);
+//         }
+//     }
+// }
+
+// public class recall {
+//     public static int firstMissingPositive(int[] nums) {
+//         int index = 0;
+//         int n = nums.length;
+//         while(index < n){
+//              if(nums[index] >= 1 && nums[index] <= n && nums[index] != nums[nums[index] - 1]){
+//             int newindex = nums[index] - 1;
+//             int temp = nums[newindex];
+//             nums[newindex] = nums[index];
+//             nums[index] = temp;
+//         }
+//         else{
+//             index++;
+//         }
+//         }
+       
+//         for(int i =0;i<n;i++){
+//             int val = i+1;
+//             if(nums[i] != val){
+//                 return val;
+//             }
+//         }
+//         return n+1;
+//     }
+//     public static void main(String[] args) {
+//         int nums[] = {7,8,9,10,11};
+//         int res = firstMissingPositive(nums);
+//         System.out.println(res);
+//     }
+// }
