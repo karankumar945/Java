@@ -214,18 +214,14 @@
 //         System.out.println(count);
 //     }
 // }
-
-
 // class Solution {
 //     public void nextPermutation(int[] nums) {
 //         int n = nums.length;
 //         int i = n - 2;
-
 //         // Step 1: find breakpoint
 //         while (i >= 0 && nums[i] >= nums[i + 1]) {
 //             i--;
 //         }
-
 //         // Step 2: if breakpoint exists
 //         if (i >= 0) {
 //             int j = n - 1;
@@ -234,17 +230,14 @@
 //             }
 //             swap(nums, i, j);
 //         }
-
 //         // Step 3: reverse suffix
 //         reverse(nums, i + 1, n - 1);
 //     }
-
 //     void swap(int[] nums, int i, int j) {
 //         int temp = nums[i];
 //         nums[i] = nums[j];
 //         nums[j] = temp;
 //     }
-
 //     void reverse(int[] nums, int start, int end) {
 //         while (start < end) {
 //             swap(nums, start, end);
@@ -253,8 +246,6 @@
 //         }
 //     }
 // }
-
-
 // public class recall{
 //     public static int searchInsert(int[] nums, int target) {
 //         int low = 0;
@@ -280,7 +271,6 @@
 //         System.out.println(ans);
 //     }
 // }
-
 // public class recall{
 //     public static int findMin(int[] nums) {
 //         int low = 0;
@@ -305,11 +295,9 @@
 //         System.out.println(res);
 //     }
 // }
-
 // public class recall {
 //     public static int bestClosingTime(String customers) {
 //         int n = customers.length();
-
 //         // Step 1: penalty when shop is closed all day
 //         int penalty = 0;
 //         for (int i = 0; i < n; i++) {
@@ -317,10 +305,8 @@
 //                 penalty++;
 //             }
 //         }
-
 //         int minPenalty = penalty;
 //         int bestHour = 0;
-
 //         // Step 2: open shop hour by hour
 //         for (int i = 0; i < n; i++) {
 //             if (customers.charAt(i) == 'Y') {
@@ -328,13 +314,11 @@
 //             } else {
 //                 penalty++;      // open + N is penalty
 //             }
-
 //             if (penalty < minPenalty) {
 //                 minPenalty = penalty;
 //                 bestHour = i + 1;
 //             }
 //         }
-
 //         return bestHour;
 //     }
 //     public static void main(String[] args) {
@@ -342,26 +326,46 @@
 //         System.out.println(bestClosingTime(shop));
 //     }
 // }
+// public class recall{
+//     public static void longestCommonPrefix(String[] strs,char[] prefix) {
+//         int count = 0;
+//         for(int i=0;i<3;i++){
+//             int word = 0;
+//             char temp = strs[word].charAt(i);
+//             if(temp == strs[word+1].charAt(i) && strs[word+1].charAt(i) == strs[word+2].charAt(i)){
+//                 prefix[count++] =temp;
+//         }
+//         }
+//         for(int i=0;i<count;i++){
+//             System.out.println(prefix[i]);
+//         }
+//     }
+//     public static void main(String[] args) {
+//         String strs[] = {"flower","flow","flight"};
+//         char prefix[] = new char[5];
+//         longestCommonPrefix(strs, prefix);
+//     }
+// }
+public class recall {
 
+    public static int removeDuplicates(int[] nums) {
+        int count = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[count] = nums[i];
+                count++;
+            }
+        }
 
-
-public class recall{
-    public static void longestCommonPrefix(String[] strs,char[] prefix) {
-        int count = 0;
-        for(int i=0;i<3;i++){
-            int word = 0;
-            char temp = strs[word].charAt(i);
-            if(temp == strs[word+1].charAt(i) && strs[word+1].charAt(i) == strs[word+2].charAt(i)){
-                prefix[count++] =temp;
-        }
-        }
-        for(int i=0;i<count;i++){
-            System.out.println(prefix[i]);
-        }
+        return count;
     }
+
     public static void main(String[] args) {
-        String strs[] = {"flower","flow","flight"};
-        char prefix[] = new char[5];
-        longestCommonPrefix(strs, prefix);
+        int nums[] = {0, 0, 1, 2, 3, 3};
+        int res = removeDuplicates(nums);
+        System.out.println("count" + res);
+        for (int i = 0; i < res; i++) {
+            System.out.println(nums[i]);
+        }
     }
 }
