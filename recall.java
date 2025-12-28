@@ -400,3 +400,34 @@
 //         System.out.println(res);
 //     }
 // }
+
+
+// public class recall{
+//     public static int missingNumber(int[] nums) {
+//         int index = 0;
+//         int n= nums.length;
+//         while(index < n){
+//             if(nums[index] < n && nums[index] != nums[nums[index]]){
+//                 int newindex = nums[index];
+//                 int temp = nums[newindex];
+//                 nums[newindex] = nums[index];
+//                 nums[index] = temp;
+//             }
+//             else{
+//                 index++;
+//             }
+//         }
+//             for(int i = 0 ;i< n;i++){
+//                 if(nums[i] != i){
+//                     return i;
+//                 }
+//             }
+        
+//         return n+1;
+//     }
+//     public static void main(String[] args) {
+//         int nums[] = {9,6,4,2,3,5,7,0,1};
+//         int res = missingNumber(nums);
+//         System.out.println(res);
+//     }
+// }
