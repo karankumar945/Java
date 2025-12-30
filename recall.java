@@ -432,28 +432,47 @@
 //     }
 // }
 
-public class recall{
-    public static int countNegatives(int[][] grid) {
-        int count = 0;
-        int m = grid.length;
-        int n = grid[0].length;
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                if(grid[i][j] < 0){
-                    count++;
-                }
+// public class recall{
+//     public static int countNegatives(int[][] grid) {
+//         int count = 0;
+//         int m = grid.length;
+//         int n = grid[0].length;
+//         for(int i=0;i<m;i++){
+//             for(int j=0;j<n;j++){
+//                 if(grid[i][j] < 0){
+//                     count++;
+//                 }
+//             }
+//         }
+//         return count;
+//     }
+//     public static void main(String[] args) {
+//         int grid[][] = {
+//     {4, 3, 2, -1},
+//     {3, 2, 1, -1},
+//     {1, 1, -1, -2},
+//     {-1, -1, -2, -3}
+// };
+//         int res = countNegatives(grid);
+//         System.out.println(res);
+//     }
+// }
+
+public class recall {
+    public static boolean canJump(int[] nums) {
+        int maxReach = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (i > maxReach) {
+                return false;
             }
+            maxReach = Math.max(maxReach, i + nums[i]);
         }
-        return count;
+        return true;
     }
     public static void main(String[] args) {
-        int grid[][] = {
-    {4, 3, 2, -1},
-    {3, 2, 1, -1},
-    {1, 1, -1, -2},
-    {-1, -1, -2, -3}
-};
-        int res = countNegatives(grid);
+        int nums[] = {2,3,1,1,4};
+        boolean res = canJump(nums);
         System.out.println(res);
     }
 }
