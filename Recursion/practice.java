@@ -1,4 +1,4 @@
-// Power of a number → x^n using recursion.
+//  Power of a number → x^n using recursion.
 
 public class practice{
     public static int calpow(int n,int x){
